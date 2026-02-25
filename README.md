@@ -7,6 +7,8 @@ As part of the _Professional Certificate in Machine Learning and Artificial Inte
 
 The objective of the challenge was to maximise each black-box function $f(\mathbf{x})$. While the number of known evaluations of varied between each function, there was a budget of only 13 additional evaluations for each function. It is important to note that the goal was not necessarily to identify the global maximum, but rather to locate a sufficiently high-quality local maximum within the constrained budget. In deep-learning hyperparameter optimisation this often the case as searching the entire feature space for global optima is computationally unfeasible. 
 
+### 3. Function Specifications
+
 | Function | Input | Output | Domain | Number of Known Evaluations | Description |
 |----------|--------|---------|--------|-----------------------------|-------------|
 | 1 | $(x_1, x_2)$ | $y$ |$[0, 1]^2$| 10 | $f(\mathbf{x})$ describes the intensity of a radiation field with multiple sources where $x_1$ and $x_2$ represent the 2D spatial coordinates.  |
@@ -47,5 +49,5 @@ Output:
 10: return x*
 ```
 
-An important aspect of the GP process is the kernel $\mathbf{K}$ or covariance function which allows for the creation of the surrogate model by measuring the similarity between data points. It encodes the assumptions about the black-box function $f(\mathbf{x})$ regarding smoothness and noise. For each black-box function, the challenge was to determine the approapriate kernel $\mathbf{K}$, acquistion function $\alpha{\mathbf{x}}$ and exploration/exploitation trade-off parmaeter values ($\kappa$, $\xi$, etc.). 
+An important aspect of the GP process is the kernel $\mathbf{K}$ or covariance function which allows for the creation of the surrogate model by measuring the similarity between data points. It encodes the assumptions about the black-box function $f(\mathbf{x})$ regarding smoothness and noise. For each black-box function, the challenge was to determine the approapriate kernel $\mathbf{K}$, acquistion function $\alpha{\mathbf{x}}$ and exploration/exploitation trade-off parameter values ($\kappa$, $\xi$, etc.). 
 ```

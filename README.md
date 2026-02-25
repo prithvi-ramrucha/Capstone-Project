@@ -16,7 +16,7 @@ The objective of the challenge was to maximise each black-box function $f(\mathb
 5 | $(x_1, x_2, x_3, x_4)$ | $y$ |$[0, 1]^4$| 20 | $f(\mathbf{x})$ returns the chemical yield of an industrial process that is directly affected by the parameters $x_1, x_2, x_3$ and $x_4$. The distribution is unimodal with a global peak where the yield is maximial. | 
 6 | $(x_1, x_2, x_3, x_4, x_5)$ | $y$ |$[0, 1]^5$| 20 | Each feature $x_i$ quantifies the amount of an ingredient of a cake (flour, sugar, eggs, butter and milk). The function $f(\mathbf{x}) < 0$ returns a negative score where scores closer to zero are favoured. |
 7 | $(x_1, x_2, x_3, x_4, x_5, x_6)$ | $y$ |$[0, 1]^6$| 30 | The black-box function $f(\mathbf{x})$ represents the performance metric of deep-learning model. Each feature $x_i$ is a hyperparameter to the model. |
-6 | $(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8)$ | $y$ |$[0, 1]^8$| 40 | The black-box function $f(\mathbf{x})$ represents the performance metric (validation accuracy) of deep-learning model. Each feature $x_i$ is a hyperparameter to the model. |
+8 | $(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8)$ | $y$ |$[0, 1]^8$| 40 | The black-box function $f(\mathbf{x})$ represents the performance metric (validation accuracy) of deep-learning model. Each feature $x_i$ is a hyperparameter to the model. |
 
 ### 4. Technical Approach
 

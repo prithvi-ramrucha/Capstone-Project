@@ -22,7 +22,7 @@ The objective of the challenge was to maximise each black-box function $f(\mathb
 
 ### 4. Technical Approach
 
-Our approach was to perform Bayesian optimisation using the canonical setup that involves a surrogate model paired with an acquisition function. We implemented this optimisation procedure using the `skopt` library. Specifically, a Gaussian Process (GP) surrogate model was used to approximate the unknown black-box function $f(\mathbf{x})$. The GP provides both a posterior mean $\mu(\mathbf{x})$ that directly approximates $f(\mathbf{x})$ and provides an associated uncertainty $\sigma(\mathbf{x})$. With the aid of an acquisition function of choice, new points to evaluate are determined. These new evaluations are used to update the surrogate model, and this process repeats until the budget has been spent or a suitable optimum has been found. The canonical BO process is outlined by the pseudocode below,
+Our approach was to perform Bayesian optimisation using the canonical setup that involves a surrogate model paired with an acquisition function. We implemented this optimisation procedure using the `skopt` library. Specifically, a Gaussian Process (GP) surrogate model was used to approximate the unknown black-box function $f(\mathbf{x})$. The GP provides both a posterior mean $\mu(\mathbf{x})$ that directly approximates $f(\mathbf{x})$ and an associated uncertainty $\sigma(\mathbf{x})$. With the aid of an acquisition function of choice, new points to evaluate are determined. These new evaluations are used to update the surrogate model, and this process repeats until the budget has been spent or a suitable optimum has been found. The canonical BO process is outlined by the pseudocode below,
 
 ```text
 Algorithm: Bayesian Optimisation (BO)
@@ -49,5 +49,4 @@ Output:
 10: return x*
 ```
 
-An important aspect of the GP process is the kernel $\mathbf{K}$ or covariance function which allows for the creation of the surrogate model by measuring the similarity between data points. It encodes the assumptions about the black-box function $f(\mathbf{x})$ regarding smoothness and noise. For each black-box function, the challenge was to determine the approapriate kernel $\mathbf{K}$, acquistion function $\alpha{\mathbf{x}}$ and exploration/exploitation trade-off parameter values ($\kappa$, $\xi$, etc.). 
-```
+An important aspect of the GP process is the kernel $\mathbf{K}$ or covariance function which allows for the creation of the surrogate model by measuring the similarity between data points. It encodes the assumptions about the black-box function $f(\mathbf{x})$ regarding smoothness and noise. For each black-box function, the challenge was to determine the appropriate kernel $\mathbf{K}$, acquistion function $\alpha{\mathbf{x}}$ and exploration/exploitation trade-off parameter values ($\kappa$, $\xi$, etc.).

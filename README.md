@@ -17,4 +17,29 @@ The objective of the challenge was to maximise each black-box function $f(\mathb
 
 ### 4. Technical Approach
 
-Our approach was to perform Bayesian optimisation using the canonical setup that involes a surrogate model paired with an acquisition function. We implemented this optimisation procedure using the `skopt` library. Specifically, a Gaussian Process (GP) surrogate model was used to approximate the unknown black-box function $f(\mathbf{x})$. The GP provides both a posterior mean $\mu(\mathbf{x})$ that directly approximates $f(\mathbf{x})$ and provides an associated uncertainty $\sigma(\mathbf{x})$.
+Our approach was to perform Bayesian optimisation using the canonical setup that involes a surrogate model paired with an acquisition function. We implemented this optimisation procedure using the `skopt` library. Specifically, a Gaussian Process (GP) surrogate model was used to approximate the unknown black-box function $f(\mathbf{x})$. The GP provides both a posterior mean $\mu(\mathbf{x})$ that directly approximates $f(\mathbf{x})$ and provides an associated uncertainty $\sigma(\mathbf{x})$. With the aid of an acquistion function of choice, 
+
+
+```algorithm
+Algorithm: Bayesian Optimisation (BO)
+
+Input:
+    - Black-box objective function $f(\mathbf{x})$
+    - Surrogate model $S$
+    - Acquisition function $\alpha(\mathbf{x})$
+    - Initial dataset $D_0 = {(x_i, y_i)}$ for $i = 1,..., n_0$
+    - Evaluation budget $T$
+
+Output:
+    - Best observed solution $\mathbf{x}*$.
+
+1:  $D \Longleftarrow D_0$
+2:  for $t = n_0 + 1$ to $T$ do
+3:      Fit surrogate model $S$ to dataset $D$
+4:      Define acquisition function $\alpha(\mathbf{x}; S)$
+5:      $x_t \Longleftarrow \text{argmax}_{\mathbf{x}} \alpha(\mathbf{x}; S)$
+6:      $y_t \Longleftarrow f(\mathbf{x}_t)$               
+7:      $D \Longleftarrow D ∪ {(x_t, y_t)}$
+8:  end for
+9:  $\mathbf{x}* \Longleftarrow \text{argmax}_{(x_i, y_i) \in D} y_i$
+10: return $\mathbf{x}*$

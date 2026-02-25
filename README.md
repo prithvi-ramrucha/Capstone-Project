@@ -19,8 +19,6 @@ The objective of the challenge was to maximise each black-box function $f(\mathb
 
 Our approach was to perform Bayesian optimisation using the canonical setup that involes a surrogate model paired with an acquisition function. We implemented this optimisation procedure using the `skopt` library. Specifically, a Gaussian Process (GP) surrogate model was used to approximate the unknown black-box function $f(\mathbf{x})$. The GP provides both a posterior mean $\mu(\mathbf{x})$ that directly approximates $f(\mathbf{x})$ and provides an associated uncertainty $\sigma(\mathbf{x})$. With the aid of an acquistion function of choice, 
 
-
-```algorithm
 Algorithm: Bayesian Optimisation (BO)
 
 Input:

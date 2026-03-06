@@ -49,4 +49,4 @@ Output:
 10: return x*
 ```
 
-An important aspect of the GP process is the kernel $\mathbf{K}$ or covariance function which allows for the creation of the surrogate model by measuring the similarity between data points. It encodes the assumptions about the black-box function $f(\mathbf{x})$ regarding smoothness and noise. For each black-box function, the challenge was to determine the appropriate kernel $\mathbf{K}$, acquistion function $\alpha{\mathbf{x}}$ and exploration/exploitation trade-off parameter values ($\kappa$, $\xi$, etc.).
+An important aspect of the GP process is the kernel $\mathbf{K}$ or covariance function which allows for the creation of the surrogate model by measuring the similarity between data points. It encodes the assumptions about the black-box function $f(\mathbf{x})$ regarding smoothness and noise. For each black-box function, the challenge was to determine the appropriate kernel $\mathbf{K}$, acquistion function $\alpha({\mathbf{x})}$ and exploration/exploitation trade-off parameter values ($\kappa$, $\xi$, etc.).
